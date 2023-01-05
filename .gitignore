@@ -1,0 +1,11 @@
+# cypress
+/cypress/reports
+/cypress/**/fixtures/*.json
+/com
+/cypress/downloads/*
+/cypress/videos/*
+/cypress/screenshots/*
+/cypress.env.json
+
+# dependencies
+/node_modules
