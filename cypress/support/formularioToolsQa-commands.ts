@@ -7,6 +7,7 @@ declare namespace Cypress {
     preencherFormulario(formulario): Chainable
     validarFormulario(): Chainable
     selecionarGrid(): Chainable
+    validarGrid(): Chainable
     arrastarCard(): Chainable
   }
 }
@@ -61,10 +62,18 @@ Cypress.Commands.add('selecionarGrid', () => {
     cy.get(':nth-child(5) > .group-header > .header-wrapper').click();
     cy.get(':nth-child(5) > .element-list > .menu-list > #item-1 > .text').click();
     cy.get('#demo-tab-grid').click();
-    cy.get('#row1 > :nth-child(1)').click();    
+    cy.get('#row1 > :nth-child(1)').click();      
     cy.get('#row2 > :nth-child(2)').click();
     cy.get('#row3 > :nth-child(1)').click();
 })
+
+
+Cypress.Commands.add('validarGrid', () => {   
+  cy.get('#row1 > :nth-child(1)').should('have.class', 'active')
+  cy.get('#row2 > :nth-child(2)').should('have.class', 'active')
+  cy.get('#row3 > :nth-child(1)').should('have.class', 'active')
+})
+
 
 Cypress.Commands.add('arrastarCard', () => {
   cy.get(':nth-child(5) > .group-header > .header-wrapper').click();

@@ -25,6 +25,7 @@ describe('FormularioToolsQa', () => {
 
   it('FA - Interactions - Seleção das cores no Grid', () => {
     cy.selecionarGrid();    
+    cy.validarGrid()
   })
 
   it('FA - Interactions - Mover o Card "Drag Me"', () => {
