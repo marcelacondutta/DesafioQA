@@ -16,10 +16,19 @@ describe('FormularioToolsQa', () => {
     return false
   })
 
-  it('FP - Preencher Formulário', () => {
+  it('FP - Forms - Preencher Formulário', () => {
     cy.fixture('formularioToolsQa-data').then(function (formulario) {
     cy.preencherFormulario(formulario.dadosFormulario);
-    cy.validarFormulario()
+    cy.validarFormulario();
   })
   })
+
+  it('FA - Interactions - Seleção das cores no Grid', () => {
+    cy.selecionarGrid();    
+  })
+
+  it('FA - Interactions - Mover o Card "Drag Me"', () => {
+    cy.arrastarCard();
+  })
+  
 })
